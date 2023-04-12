@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blockchain Suggester</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-image: url('net.gif');
+			
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+		}
+		
+		.bg-image {
+			background-image: url("net.gif");
+			filter: blur(10px);
+			-webkit-filter: blur(100px);
+			height: 100%;}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			background-color: rgba(0, 51, 54, 0.5); /* Set a semi-transparent white background for the container */
+		}
+		
+		.text-box {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 150px;
+			width: 50%;
+			border: 0px solid #06001f80;
+			padding: 10px;
+			margin-bottom: 20px;
+			text-align: center;
+			color: white;
+			font-size: 24px;
+			font-weight: bold;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.5); /* Set a semi-transparent white background for the text box */
+		}
+		
+		.button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 80%;
+		}
+		
+		.button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 18px;
+			font-weight: bold;
+			margin: 20px ;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+		
+		.button:hover {
+			background-color: #3e8e41;
+		}
+		
+		@media screen and (max-width: 600px) {
+			.button-container {
+				flex-direction: column;
+			}
+			
+			.button {
+				width: 100%;
+			}
+			
+			.text-box {
+				height: 200px;
+			}
+		}
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background-color: rgba(0, 25, 105, 0.178);
+			color: rgb(0, 255, 213);
+			text-align: center;
+		}
+		.header {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			background-color: rgba(0, 25, 105, 0.384);
+			color: rgb(0, 255, 213);
+			text-align: center;
+		}   
+	</style>
+</head>
+<body>
+	<div class="header">
+		<h2>Blockchain Platform Suggester</h2>
+	  </div>
+	<div class="container">
+		<div class="text-box" id="text-display">Ready to Chose Your Blockchain Platform ?</div>
+		<button class="button" id="button1" onclick="checkDecision('button1')">Yes</button>
+		<button class="button" id="button2" onclick="checkDecision('button2')">No</button>
+
+		</div>
+	</div>
+	<script>
+		function checkDecision(buttonId) {
+			let textDisplay = document.getElementById("text-display");
+			let currentText = textDisplay.innerHTML;
+
+			switch (currentText) {
+				case "Ready to Chose Your Blockchain Platform ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Do you need third-party in your system ?";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					}
+					
+					break;
+				case "Do you need third-party in your system ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "Are you working with digital asset ?";
+					}
+					break;
+				case "You do not required Blockchain.":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Bye!";
+					}
+					break;
+				case "Are you working with digital asset ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Do you need common database in your system ?";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					}
+					break;
+				case "Do you need common database in your system ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Is multiple parties involve your system ?";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					}
+					break;
+				case "Is multiple parties involve your system ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Do you want your system to be a trustless environment ?";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					}
+					break;
+				case "Do you want your system to be a trustless environment ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Do your system require high Performence ?";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					}
+					break;
+					break;
+				case "Do your system require high Performence ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "Do you want to add large data storage uints in your system ?";
+					}
+					break;
+				case "Do you want to add large data storage uints in your system ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "Are you adding Contractual solutions in your system ?";
+					}
+					break;
+				case "Are you adding Contractual solutions in your system ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Do you require no change or little change in rules on the System ?";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					}
+					break;
+				case "Do you require no change or little change in rules on the System ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Do you need Shared write Access?";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					}
+					break;
+				case "Do you need Shared write Access?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Do you need Control over the functionalities ?";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "You do not required Blockchain.";
+					}
+					break;
+				case "Do you need Control over the functionalities ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Use Private Blockchian Such as Hyperledger Fabric, R3 Corda, IBM Blockchain, or Ethereum Enterprise.";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "Do you want trasaction to be public ?";
+					}
+					break;
+				case "Use Private Blockchian Such as Hyperledger Fabric, R3 Corda, IBM Blockchain, or Ethereum Enterprise.":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Cool! Have a nice Day";
+					} 
+					break;
+				case "Do you want trasaction to be public ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Use Public Blockchian Such as Bitcoin, Ethereum, Litecoin, or stellar.";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "Do you want mix of Control over the functionalities and public network ?";
+					}
+					break;
+				case "Use Public Blockchian Such as Bitcoin, Ethereum, Litecoin, or stellar.":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Cool! Have a nice day";
+					} 
+					break;
+
+				case "Do you want mix of Control over the functionalities and public network ?":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Go with EOSIO, Quorum, or Hperledger Besu.";
+					} else if (buttonId === "button2") {
+						textDisplay.innerHTML = "Ok, You need to be figure out more What you want.";
+					}
+					break;
+
+				case "Go with EOSIO, Quorum, or Hperledger Besu.":
+					if (buttonId === "button1") {
+						textDisplay.innerHTML = "Cool! Have a nice day";
+					} 
+					break;
+				case "Cool! Have a nice day":
+					if (buttonId === "button1") {
+						location.reload();
+					} 
+					break;
+				case "Bye!":
+					if (buttonId === "button1") {
+						location.reload();
+					} 
+					break;
+				case "Ok, You need to be figure out more What you want.":
+					if (buttonId === "button1") {
+						location.reload();
+					} 
+					break;
+
+
+				default:
+					textDisplay.innerHTML = "Oops! sometihing went wrong. Bye..";
+					break;
+			}
+		}
+	</script>
+	<div class="footer">
+		<p>Designed By GS_Kosta</p>
+	  </div>
+</body>
+</html>
